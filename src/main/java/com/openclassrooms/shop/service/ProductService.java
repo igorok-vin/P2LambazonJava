@@ -29,10 +29,8 @@ public class ProductService {
 	/**
 	 * @return all products from the inventory
 	 */
-	public Product[] getAllProducts() {
+	public List<Product> getAllProducts() {
 
-		// TODO change the return type from array to List<T> and propagate the change
-		// throughout the application
 		return productRepository.findAll();
 	}
 
@@ -43,8 +41,7 @@ public class ProductService {
 	 */
 	public Product getProductById(Long productId)
 	{
-		// TODO implement the method
-		return null;
+		return	productRepository.getProductById(productId);
 
 	}
 
@@ -55,6 +52,6 @@ public class ProductService {
 	public void updateProductQuantities(Long productId, int quantity)
 	{
 
-		// TODO implement the method
+		productRepository.updateProductStocks(productId, quantity);
 	}
 }
